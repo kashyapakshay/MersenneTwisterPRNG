@@ -60,11 +60,10 @@ def decrypt(ciphertext, secret_key, init_vec):
 	# 	d = chr((ord(c) + p) % S)
 	# 	print d, p
 	# 	dec.append(d)
-    #
+	#
 	# return dec
 	return ''.join([chr((ord(c) - p) % S) for c, p in zip(ciphertext, pad)])
 
 ciphertext = encrypt('Hello World', secret_key, init_vec)
 print 'Encrypted: ', ciphertext
 print 'Decrypted: ', decrypt(ciphertext, secret_key, init_vec)
-mt
